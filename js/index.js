@@ -52,17 +52,24 @@ logoStretch.setAttribute('src',  siteContent["main-content"]["middle-img-src"])
 
 const anchors = document.getElementsByTagName('a')
 anchors[0].textContent = siteContent.nav["nav-item-1"];
+
 anchors[1].textContent = siteContent.nav["nav-item-2"];
 anchors[2].textContent = siteContent.nav["nav-item-3"];
 anchors[3].textContent = siteContent.nav["nav-item-4"];
 anchors[4].textContent = siteContent.nav["nav-item-5"];
 anchors[5].textContent = siteContent.nav["nav-item-6"];
 
+for(let i = 0; i < anchors.length; i++){
+  anchors[i].style.color = "green"
+}
+
+
+
+//????????????????????????????????????????????????????????????????????????????
 
 
 let h1 = document.querySelector("h1");
 h1.innerHTML = siteContent.cta.h1.replace(new RegExp(" ", 'g'), '<br>');
-//???????????????????????????//
 
 const btn = document.querySelector('button')
 btn.textContent = siteContent.cta.button;
@@ -89,4 +96,18 @@ mainContent[7].textContent = siteContent.contact.email
 mainContent[8].textContent = siteContent.footer.copyright
 
 console.log(mainContent)
+
+const childElement1 = document.createElement("a")
+
+childElement1.textContent = 'Sign-Up';
+childElement1.setAttribute('href', '#');
+let navbar = document.querySelector('header nav')
+navbar.appendChild(childElement1);
+childElement1.style.color = "green"
+
+const childElement2 = document.createElement("a")
+childElement2.textContent = "News"
+childElement2.setAttribute('href', '#');
+navbar.prepend(childElement2)
+childElement2.style.color = 'green'
 
